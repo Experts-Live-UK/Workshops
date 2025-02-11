@@ -92,12 +92,21 @@ More details: **[Intune Manager GitHub Repository](https://github.com/Micke-K/In
 1. Download the latest **Intune Manager** release from [GitHub](https://github.com/Micke-K/IntuneManagement).  
 2. Extract the downloadeded zip file.
 3. Unblock all .cmd and .ps/psm/psd files - **You can do this by right clicking the file and selecting the Unblock checkbox**
-4. Open PowerShell 7 and navigate to the folder - **Example: cd C:\Temp\IntuneManagement-master**
-5. Run the tool by typing **.\start-Intunemanagement.ps1**
-6. Using the profile icon in the top right, sign in using your global admin account
-7. Accept any graph permissions required.
-8. Select the profile icon again, and choose request consent, approve these again.
-9. From here you can select the required module and export/import or document policy configurations.
+4. ![image](https://github.com/user-attachments/assets/38f6e683-1590-4edd-8c90-16ab3503fb29)
+5. Open PowerShell 7 and navigate to the folder - **Example: cd C:\Temp\IntuneManagement-master**
+6. ![image](https://github.com/user-attachments/assets/1d96a337-dccd-4b6b-a800-b95a7c0fe4ea)
+7. Run the tool by typing **.\start-Intunemanagement.ps1**
+8. ![image](https://github.com/user-attachments/assets/56e371c5-8883-4d04-b2b6-4eb72b074acb)
+9. Using the profile icon in the top right, sign in using your global admin account
+10. ![image](https://github.com/user-attachments/assets/f8135ab2-58fd-4f97-94cd-c64bab7c19c4)
+11. Accept any graph permissions required.
+12. ![image](https://github.com/user-attachments/assets/75e0eec3-416d-431d-a11d-30138ca263f8)
+13. Select the profile icon again, and choose request consent, approve these again.
+14. ![image](https://github.com/user-attachments/assets/81b7e385-712f-4fff-b021-6dd4031daefa)
+15. ![image](https://github.com/user-attachments/assets/5b2dc3de-fd58-46ff-8242-b9b0c78bd973)
+16. From here you can select the required module and export/import or document policy configurations.
+
+If you have any issues you can use the following guide: https://www.natehutchinson.co.uk/post/easily-import-export-and-document-intune-configurations 
 
 ---
 
@@ -118,6 +127,8 @@ For this workshop, we will use **community-provided baselines** to quickly apply
 🔗 **Baseline Repository:** [Open Intune Baseline](https://github.com/SkipToTheEndpoint/OpenIntuneBaseline).  
 
 ### Import the required policies using the Intune Management tool
+![image](https://github.com/user-attachments/assets/d6d2aeeb-7964-4ed5-9e45-cdf7bbee4c90)
+
 
 ---
 
@@ -137,11 +148,17 @@ To onboard devices to **Defender for Endpoint**, follow these steps:
 
 1. Go to **Microsoft Defender Portal** (https://security.microsoft.com) > **Settings** > **Endpoints** > **Advanced Features** > **Microsoft Intune**
 2. Enable the toggle for the **Microsoft Intune** connection.
-3. Go to **Microsoft Intune Portal** > **Tenant Administration** > **Connectors and Tokens** > **Microsoft Defender for Endpoint**
-4. Confirm **Connection status** is **Enabled** and switch all platform compliance policy evaluation settings to **On**
-5. Go to **Endpoint Security** node in Intune > **Endpoint detection and response** and create a new policy with the below settings.
-6. Assign the policy to your target devices.  
-7. Verify successful onboarding in the **Microsoft Defender portal**.
+3. ![image](https://github.com/user-attachments/assets/98a67b38-b1fd-4df7-9761-60603048a9de)
+4. Go to **Microsoft Intune Portal** > **Tenant Administration** > **Connectors and Tokens** > **Microsoft Defender for Endpoint**
+5. Confirm **Connection status** is **Enabled** and switch all platform compliance policy evaluation settings to **On**
+6. ![image](https://github.com/user-attachments/assets/fe06178f-477b-4489-a16f-3d530f88316f)
+7. Go to **Endpoint Security** node in Intune > **Endpoint detection and response** and create a new policy with the below settings.
+8. ![image](https://github.com/user-attachments/assets/abce36ed-eb2e-4357-8fa1-803a8cfe70d2)
+9. ![image](https://github.com/user-attachments/assets/0dcd8e11-8e08-4ce9-b93a-ca32598dd346)
+10. Assign the policy to your target devices.  
+11. Verify successful onboarding in the **Microsoft Defender portal**.
+12. ![image](https://github.com/user-attachments/assets/0ca35576-2e90-4af9-b580-9677d6b9e6b8)
+
 
 ---
 
