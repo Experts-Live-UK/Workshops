@@ -1,1 +1,0 @@
-This is where the workshop content will be that attendees can use to follow along.
