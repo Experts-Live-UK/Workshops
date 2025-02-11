@@ -93,7 +93,7 @@ More details: **[Intune Manager GitHub Repository](https://github.com/Micke-K/In
 2. Extract the downloadeded zip file.
 3. Unblock all .cmd and .ps/psm/psd files - **You can do this by right clicking the file and selecting the Unblock checkbox**
 4. Open PowerShell 7 and navigate to the folder - **Example: cd C:\Temp\IntuneManagement-master**
-5. Run the tool by typining **.\start-Intunemanagement.ps1
+5. Run the tool by typing **.\start-Intunemanagement.ps1**
 6. Using the profile icon in the top right, sign in using your global admin account
 7. Accept any graph permissions required.
 8. Select the profile icon again, and choose request consent, approve these again.
