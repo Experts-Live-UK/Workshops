@@ -28,8 +28,8 @@ Before attending the workshop, ensure you have the following:
 - You will need **Global Admin** permissions to configure security settings, onboard devices, and manage policies.  
 
 ✅ **PowerShell 7 Installed**  
-- PowerShell 7 is required for executing scripts used in Intune and Defender for Endpoint onboarding.  
-- **[Download PowerShell 7](https://github.com/PowerShell/PowerShell/releases/latest)** if you haven't already installed it.  
+- PowerShell 7 is required for executing some of the community tools used throughout the workshop.  
+- **[Download PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)** if you haven't already installed it.  
 
 # Zero Trust & Endpoint Security Workshop – Hands-on Lab
 
@@ -56,10 +56,8 @@ Microsoft provides a **Zero Trust Readiness Assessment** tool to help organisati
 
 ### How to Use the Assessment:  
 1. Navigate to **[Zero Trust Readiness Assessment](https://microsoft.github.io/zerotrustassessment/docs/app-permissions)**.  
-2. Sign in with your **Microsoft 365 Global Admin** account.  
-3. Grant the necessary app permissions.  
-4. Run the assessment and review recommendations.  
-5. Apply recommended security configurations in **Microsoft Intune, Defender, and Entra ID**.
+2. Open PowerShell 7 on your device, and install the module following the steps provided in the link.   
+3. Run the assessment and review recommendations.
 
 ---
 
@@ -92,10 +90,14 @@ More details: **[Intune Manager GitHub Repository](https://github.com/Micke-K/In
 
 ### How to Use Intune Manager:  
 1. Download the latest **Intune Manager** release from [GitHub](https://github.com/Micke-K/IntuneManagement).  
-2. Install and run the tool.  
-3. Connect to your **Microsoft Intune environment** using your admin credentials.  
-4. Select **Export** to back up existing policies or **Import** to deploy new configurations.  
-5. Review the applied changes and ensure compliance with your security standards.
+2. Extract the downloadeded zip file.
+3. Unblock all .cmd and .ps/psm/psd files - **You can do this by right clicking the file and selecting the Unblock checkbox**
+4. Open PowerShell 7 and navigate to the folder - **Example: cd C:\Temp\IntuneManagement-master**
+5. Run the tool by typining **.\start-Intunemanagement.ps1
+6. Using the profile icon in the top right, sign in using your global admin account
+7. Accept any graph permissions required.
+8. Select the profile icon again, and choose request consent, approve these again.
+9. From here you can select the required module and export/import or document policy configurations.
 
 ---
 
@@ -115,6 +117,8 @@ For this workshop, we will use **community-provided baselines** to quickly apply
 
 🔗 **Baseline Repository:** [Open Intune Baseline](https://github.com/SkipToTheEndpoint/OpenIntuneBaseline).  
 
+### Import the required policies using the Intune Management tool
+
 ---
 
 ## 8️⃣ Introduction to Microsoft Defender for Endpoint  
@@ -131,21 +135,23 @@ For this workshop, we will use **community-provided baselines** to quickly apply
 
 To onboard devices to **Defender for Endpoint**, follow these steps:
 
-1. Go to **Microsoft Intune Admin Center** > **Endpoint Security** > **Microsoft Defender for Endpoint**.  
-2. Select **Onboarding** and choose the appropriate method (e.g., Intune).  
-3. Deploy the **onboarding profile** to target devices.  
-4. Verify successful onboarding in the **Microsoft Defender portal**.
+1. Go to **Microsoft Defender Portal** (https://security.microsoft.com) > **Settings** > **Endpoints** > **Advanced Features** > **Microsoft Intune**
+2. Enable the toggle for the **Microsoft Intune** connection.
+3. Go to **Microsoft Intune Portal** > **Tenant Administration** > **Connectors and Tokens** > **Microsoft Defender for Endpoint**
+4. Confirm **Connection status** is **Enabled** and switch all platform compliance policy evaluation settings to **On**
+5. Go to **Endpoint Security** node in Intune > **Endpoint detection and response** and create a new policy with the below settings.
+6. Assign the policy to your target devices.  
+7. Verify successful onboarding in the **Microsoft Defender portal**.
 
 ---
 
 ## 🔟 Post-Onboarding Tasks & Common Mistakes  
 
-After onboarding, complete these **post-deployment steps**:
+After onboarding, use the following resources to confirm a healthy MDE deployment:
 
-✅ **Ensure all devices report correctly in the Defender portal**.  
-✅ **Check device compliance policies in Intune**.  
-✅ **Enable automated investigation and response**.  
-✅ **Review common onboarding issues, such as missing Defender agents or misconfigured policies**.
+✅ https://jeffreyappel.nl/how-to-check-for-a-healthy-defender-for-endpoint-environment  
+✅ https://www.youtube.com/watch?v=_zjANEdgcpo&t=674s 
+✅ https://www.youtube.com/watch?v=PBy1dxoqakY&t=343s
 
 ---
 
@@ -155,6 +161,7 @@ Use these **testing tools** to verify your **Defender for Endpoint** setup:
 
 - **[Defender Testground](https://demo.wd.microsoft.com/)** – Simulate malware detections and endpoint threats.  
 - **[MDETester](https://github.com/LearningKijo/MDEtester)** – Run scripted validation tests to check **onboarding success and policy enforcement**.
+- **[MDETroubleshooter](https://github.com/ThomasVrhydn/MDE-troubleshooter)** – Analyze issues related to MDE.
 
 ---
 
